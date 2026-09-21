@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Language Learning Companion</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>AI Language Learning Companion</h1>
+            <p>
+                Translate and learn between
+                <strong>English, Telugu & Kannada</strong>
+            </p>
+        </header>
+
+        <main class="translator-card">
+
+            <div class="section-title">
+                <h2>Text Translation</h2>
+                <p>
+                    Enter text and choose the language you want to translate to.
+                </p>
+            </div>
+
+            <div class="form-group">
+                <label for="sourceText">Enter your text</label>
+
+                <textarea
+                    id="sourceText"
+                    rows="7"
+                    placeholder="Type English, Telugu, or Kannada text here..."
+                ></textarea>
+
+                <div class="textarea-actions">
+                    <button id="clearButton" class="secondary-button" type="button">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="controls">
+
+                <div class="form-group">
+                    <label for="targetLanguage">Translate to</label>
+
+                    <select id="targetLanguage">
+                        <option value="en">English</option>
+                        <option value="te">Telugu</option>
+                        <option value="kn">Kannada</option>
+                    </select>
+                </div>
+
+                <button id="translateButton">
+                    Translate
+                </button>
+
+            </div>
+
+            <div class="result-section">
+
+                <div class="result-header">
+                    <h3>Translation Result</h3>
+                    <button id="copyButton" class="secondary-button" type="button">
+                        Copy
+                    </button>
+                </div>
+
+                <div id="translationResult" class="result-box">
+                    Your translation will appear here.
+                </div>
+
+                <div id="languageInfo" class="result-box">
+                    <strong>Detected Language:</strong> -
+                </div>
+
+                <div id="tokenInfo" class="result-box">
+                    <strong>NLP Tokens:</strong> -
+                </div>
+
+            </div>
+
+
+            <!-- Translation History -->
+
+            <div class="history-section">
+
+                <div class="history-header">
+                    <div>
+                        <h3>Translation History</h3>
+                        <p>Recently translated texts are saved here.</p>
+                    </div>
+
+                    <button id="refreshHistoryButton" class="secondary-button">
+                        Refresh History
+                    </button>
+                </div>
+
+                <div id="historyContainer" class="history-container">
+
+                    <div class="history-empty">
+                        No translation history available.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-section">
+
+                <div class="info-card">
+                    <span>🌐</span>
+                    <h4>Language Detection</h4>
+                    <p>
+                        Automatically detects supported input languages.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <span>🧠</span>
+                    <h4>NLP Processing</h4>
+                    <p>
+                        Uses text preprocessing and tokenization.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <span>💬</span>
+                    <h4>Multilingual</h4>
+                    <p>
+                        Supports English, Telugu and Kannada.
+                    </p>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <p>
+                AI Language Learning Companion • NLP & Translation Project
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
